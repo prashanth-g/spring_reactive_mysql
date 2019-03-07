@@ -9,11 +9,30 @@ group = 'com.prashanth'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+
 repositories {
     mavenCentral()
+    jcenter()
+    maven {
+        url "https://repo.spring.io/libs-milestone"
+    }
+    maven {
+        url "https://repo.spring.io/libs-snapshot"
+    }
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.data:spring-boot-r2dbc:1.0.0.gh-75-SNAPSHOT'
+    implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:0.9.32'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
 }

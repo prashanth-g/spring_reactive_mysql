@@ -1,4 +1,4 @@
-package com.prashanth.spring.reactive.mysql;
+package com.prashanth.spring.reactive.mysql.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,6 @@ public class Order {
 
     private Long id;
 
-    private String name;
+    private String fn;
 
 }

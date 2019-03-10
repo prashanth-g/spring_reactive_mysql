@@ -16,7 +16,7 @@ public class MySqlApplicationConfiguration extends AbstractR2dbcConfiguration {
 
     @Override
     public ConnectionFactory connectionFactory() {
-        String url = "mysql://user:@localhost:3306/orders";
+        String url = "mysql://springuser:springuser@localhost:3306/orders";
         return new JasyncConnectionFactory(new MySQLConnectionFactory(
                 URLParser.INSTANCE.parseOrDie(url, StandardCharsets.UTF_8)
         ));
